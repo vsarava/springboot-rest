@@ -4,11 +4,6 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@NamedQueries({
-        @NamedQuery(name = "Employee.findAll",query="SELECT emp FROM Employee emp"),
-        @NamedQuery(name = "Employee.findByEmail",query="SELECT emp FROM Employee emp WHERE emp.email=:paramEmail")
-
-})
 public class Employee {
 
     @Id

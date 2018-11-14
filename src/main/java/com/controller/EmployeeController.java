@@ -16,7 +16,7 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    EmployeeService service;
+    private EmployeeService service;
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
  //   @ResponseBody

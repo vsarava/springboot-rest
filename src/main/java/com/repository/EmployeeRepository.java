@@ -1,21 +1,11 @@
 package com.repository;
 
 import com.entity.Employee;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
+import java.util.Optional;
 
-public interface EmployeeRepository {
+public interface EmployeeRepository extends CrudRepository<Employee, String> {
 
-    List<Employee> findAll();
-
-    Employee find(String id);
-
-    Employee findByEmail(String email);
-
-    Employee create(Employee employee);
-
-    Employee update(Employee employee);
-
-    void delete(Employee employee);
-
+    Optional<Employee> findByEmail(String email);
 }
