@@ -2,6 +2,8 @@ package com.controller;
 
 import com.entity.Employee;
 import com.service.EmployeeService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +15,15 @@ import java.util.List;
 //@ResponseBody
 @RestController
 @RequestMapping(value = "employees")
+@Api(description = "All about Employees")
 public class EmployeeController {
 
     @Autowired
     private EmployeeService service;
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "Find all Employees",
+                    notes = "Returns a list of employees from the database")
  //   @ResponseBody
     public List<Employee> findAll(){
 
